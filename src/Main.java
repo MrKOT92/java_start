@@ -30,7 +30,29 @@ public class Main {
     NOVEMBER,
     DECEMBER,
   }
+  private enum Season {
+    WINTER,
+    SPRING,
+    SUMMER,
+     AUTUMN
+  }
+  private static Season getSeasonFromMap(Month month) {
+    Map<Month, Season> seasonPerMonth = new HashMap<>();
+    seasonPerMonth.put(Month.JANUARY, Season.WINTER);
+    seasonPerMonth.put(Month.FEBRUARY, Season.WINTER);
+    seasonPerMonth.put(Month.MARCH, Season.SPRING);
+    seasonPerMonth.put(Month.APRIL, Season.SPRING);
+    seasonPerMonth.put(Month.MAY, Season.SPRING);
+    seasonPerMonth.put(Month.JUNE, Season.SUMMER);
+    seasonPerMonth.put(Month.JULY, Season.SUMMER);
+    seasonPerMonth.put(Month.AUGUST, Season.SUMMER);
+    seasonPerMonth.put(Month.SEPTEMBER, Season.AUTUMN);
+    seasonPerMonth.put(Month.OCTOBER, Season.AUTUMN);
+    seasonPerMonth.put(Month.NOVEMBER, Season.AUTUMN);
+    seasonPerMonth.put(Month.DECEMBER, Season.WINTER);
 
+    return seasonPerMonth.get(month);
+  }
 
   public static void main(String[] args) {
 
