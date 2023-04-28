@@ -72,29 +72,12 @@ public class Main {
 
     Scanner scanner = new Scanner(System.in);
     System.out.print("Enter the month: ");
-    String month = scanner.next();
-    Month monthKey = Month.valueOf(month.toUpperCase());
-    System.out.println(month + " has " + daysPerMonth.get(monthKey) + " days");
+    String month = scanner.next(); // месяц "как ввели (как строка)"
+    Month monthKey = Month.valueOf(month.toUpperCase()); // месяц "как enum"
+    System.out.println(month + " has " + daysPerMonth.get(monthKey) + " days.");
 
-    int nextMonthIndex = (monthKey.ordinal() + 1) % Month.values().length;
-    Month nextMonth = Month.values()[nextMonthIndex];
-    System.out.println(
-        "The next month " + nextMonth + " has " + daysPerMonth.get(nextMonth) + " days");
-    System.out.println();
-
-    System.out.print("Enter the month number: ");
-    int monthNumber = scanner.nextInt();
-    int monthIndex = monthNumber - 1;
-    monthKey = Month.values()[monthIndex];
-    System.out.println(monthKey + " has " + daysPerMonth.get(monthKey) + " days");
-    System.out.println();
-
-    System.out.println("=== Перебор через Month.values() ===");
-
-    for (Month key : Month.values()) {
-
-      System.out.println(key + ": " + daysPerMonth.get(key));
+    System.out.println(month + " is a part of the " + getSeasonFromMap(monthKey) + " season.");
     }
   }
-}
+
 
